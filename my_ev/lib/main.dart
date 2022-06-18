@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ev/screens/history_screen.dart';
 import 'package:my_ev/screens/main_screen.dart';
 import 'package:my_ev/screens/otp_screen.dart';
 import 'package:my_ev/screens/registration_screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/' : (ctx) => RegisterScreen(),
         OtPscreen.routeName : (ctx) => OtPscreen(),
         MainScreen.routeName: (ctx) => MainScreen(),
+        HistoryScreen.routeName: (ctx) => HistoryScreen(),
       },
     );
   }
