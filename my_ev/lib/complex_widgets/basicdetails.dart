@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class BasicDetails extends StatelessWidget {
   @override
@@ -6,35 +7,91 @@ class BasicDetails extends StatelessWidget {
     return GridView(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        childAspectRatio: 2.5,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
       ),
       children: [
-        Column(
-          children: [
-            Container(
-              child: const Text("Tejas Bagal"),
+        InkWell(
+          onTap: () => {},
+          splashColor: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            padding: EdgeInsets.all(10), //temporary jugaad
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.blue.shade300,
             ),
-            Container(
-              child: const Text("8847757987"),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Tejas Bagal",
+                  style: TextStyle(
+                    fontSize: 20
+                  ),
+                ),
+              
+                Text(
+                  "8847757987",
+                  style: TextStyle(
+                    fontSize: 20
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-        Column(
-          children: [
-            Container(
-              child: const Text("80 KMs"),
+        InkWell(
+          onTap: () => {},
+          splashColor: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            padding: EdgeInsets.all(10), //temporary jugaad
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.grey.shade400,
             ),
-          ],
-        ),
-        Column(
-          children: [
-            Container(
-              child: const Text("40% Battery"),
+            child: Column(
+              children: [
+                Text(
+                  "80 Kms",
+                  style: TextStyle(
+                    fontSize: 30
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
+        InkWell(
+          onTap: () => {},
+          splashColor: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            padding: EdgeInsets.all(10), //temporary jugaad
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.red,
+            ),
+            child: Column(
+              children: [
+                  Text(
+                  "40 %",
+                  style: TextStyle(
+                    fontSize: 35
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        FloatingActionButton(
+              onPressed: (){},
+              child: Icon(Icons.flash_on, size: 50),
+              backgroundColor: Theme.of(context).primaryColor,
+              foregroundColor: Colors.white,
+            ),
       ],
       padding: const EdgeInsets.all(25),
     );

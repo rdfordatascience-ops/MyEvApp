@@ -1,35 +1,14 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-
-// class MainScreen extends StatelessWidget {
-
-//   static const String routeName = '/mainScreen';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Scaffold(
-//         appBar: AppBar(
-//           title: Text("Main Screen"),
-//         ),
-//         body: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: SingleChildScrollView(
-//               child: Column(
-//             children: [
-//               Text("Map"),
-//             ],
-//           )),
-//         ));
-//   }
-
-// }
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:my_ev/complex_widgets/basicdetails.dart';
+import 'package:my_ev/providers/historyProvider.dart';
 import 'package:my_ev/screens/history_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MainScreen extends StatelessWidget {
   static const String routeName = '/mainScreen';
@@ -40,18 +19,19 @@ class MainScreen extends StatelessWidget {
     //   title: 'Flutter Google Maps Demo',
     //   home: MapSample(),
     // );
-    var appBar = AppBar(title: Text("Main Screen"),
+    var appBar = AppBar(title: Text("MyEv"),
       actions: [
           IconButton(
             onPressed: () {
               Navigator.of(context).pushNamed(HistoryScreen.routeName);
             },
             icon: const Icon(
-              Icons.timer,
-              color: Colors.white,
+              Icons.receipt_long_rounded,
+              color: Colors.black54,
+
             ),
             color: Colors.white,
-            iconSize: 30,
+            iconSize: 40,
           )
         ],
     );
@@ -65,9 +45,9 @@ class MainScreen extends StatelessWidget {
               child:  MapSample(),
             ),
             Container(
-              color: Color.fromRGBO(222, 22, 22, 0.4),
               height: (MediaQuery.of(context).size.height - appBar.preferredSize.height) * 0.25,
-              child:  BasicDetails(),
+              // child:  BasicDetails(ownerName!, mobileNumber!, batteryHealth!, totalOdometer!)
+              child: BasicDetails()
             )
           ],
         )

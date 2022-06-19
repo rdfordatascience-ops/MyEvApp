@@ -6,7 +6,7 @@ class History {
   final String paymentRecipt;
   final String paymentAmount;
   final String id;
-  final DateTime lastServiceDate;
+  final String lastServiceDate;
 
 
   History({

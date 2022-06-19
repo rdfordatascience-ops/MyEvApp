@@ -20,11 +20,6 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-
-              <meta-data
-              android:name="com.google.android.geo.API_KEY"
-              android:value="AIzaSyDq3oFkF8tv5BhFRivvF7pQEZSQIXnz0RQ"
-              />
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -33,7 +28,11 @@
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
-        <meta-data
+             <meta-data
+             android:name="com.google.android.geo.API_KEY"
+             android:value="AIzaSyDgiVRIX3iMPBjeNEex6tejmAWcgBGUEyU"
+             />
+             <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
